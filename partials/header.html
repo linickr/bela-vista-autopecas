@@ -1,0 +1,125 @@
+<header class="site-header" id="site-header-el">
+  <div class="header-inner container">
+
+    <!-- Logo -->
+    <a href="/" class="header-logo" aria-label="Bela Vista Auto Peças — página inicial">
+      <img src="/bela_vista.svg" alt="Bela Vista Auto Peças" width="90" height="58">
+    </a>
+
+    <!-- Busca central -->
+    <div class="header-search-wrap" role="search">
+      <label for="search-input" class="sr-only">Buscar peça</label>
+      <input
+        type="text"
+        id="search-input"
+        name="busca"
+        autocomplete="off"
+        spellcheck="false"
+        placeholder="Buscar peça: pastilha de freio, farol, bateria…"
+        aria-label="Buscar peça"
+      >
+      <!-- type="button" evita submit de form em previews/iframes -->
+      <button type="button" id="search-btn" aria-label="Buscar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true" width="18" height="18">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Navegação (desktop) -->
+    <nav class="header-nav" aria-label="Navegação principal">
+      <a href="/#inicio">Início</a>
+      <a href="/#categorias">Categorias</a>
+      <a href="/#sobre">Sobre</a>
+      <a href="/#avaliacoes">Avaliações</a>
+      <a href="/#contato">Contato</a>
+      <a href="/blog/">Blog</a>
+    </nav>
+
+    <!-- WhatsApp pill (desktop) -->
+    <a
+      href="https://wa.me/5527997776244"
+      class="btn-wap-header"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Falar no WhatsApp da Bela Vista Auto Peças"
+    >
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="15" height="15"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.557 4.118 1.529 5.847L.057 23.272a.75.75 0 0 0 .916.916l5.425-1.472A11.947 11.947 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.992 0-3.867-.543-5.478-1.489l-.392-.233-3.221.874.874-3.221-.233-.392A9.953 9.953 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+      Falar no WhatsApp
+    </a>
+
+    <!-- Hambúrguer (mobile) -->
+    <button
+      type="button"
+      class="hamburger"
+      id="hamburger-btn"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+      aria-label="Abrir menu"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+  </div><!-- /.header-inner -->
+
+  <!-- Painel de resultado da busca -->
+  <div id="search-panel" class="search-panel" role="region" aria-label="Resultado da busca" hidden>
+    <div class="container">
+      <div id="search-panel-content"></div>
+    </div>
+  </div>
+
+  <!-- Menu mobile -->
+  <div id="mobile-menu" class="mobile-menu" hidden>
+    <nav aria-label="Menu mobile">
+      <a href="/#inicio">Início</a>
+      <a href="/#categorias">Categorias</a>
+      <a href="/#sobre">Sobre</a>
+      <a href="/#avaliacoes">Avaliações</a>
+      <a href="/#contato">Contato</a>
+      <a href="/blog/">Blog</a>
+    </nav>
+
+    <!-- Campo de busca no mobile -->
+    <div class="mobile-search-wrap" role="search">
+      <label for="mobile-search-input" class="sr-only">Buscar peça (mobile)</label>
+      <input
+        type="text"
+        id="mobile-search-input"
+        autocomplete="off"
+        spellcheck="false"
+        placeholder="Buscar peça…"
+        aria-label="Buscar peça"
+      >
+      <button type="button" id="mobile-search-btn" aria-label="Buscar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true" width="18" height="18">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+        </svg>
+      </button>
+    </div>
+
+    <a
+      href="https://wa.me/5527997776244"
+      class="btn-wap-mobile"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.557 4.118 1.529 5.847L.057 23.272a.75.75 0 0 0 .916.916l5.425-1.472A11.947 11.947 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.992 0-3.867-.543-5.478-1.489l-.392-.233-3.221.874.874-3.221-.233-.392A9.953 9.953 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+      Falar no WhatsApp
+    </a>
+  </div><!-- /#mobile-menu -->
+
+</header><!-- /.site-header -->
+
+<!-- Botão flutuante WhatsApp — presente em toda página via partial -->
+<a
+  href="https://wa.me/5527997776244"
+  class="wap-float"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Falar no WhatsApp da Bela Vista Auto Peças"
+>
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="28" height="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.557 4.118 1.529 5.847L.057 23.272a.75.75 0 0 0 .916.916l5.425-1.472A11.947 11.947 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.992 0-3.867-.543-5.478-1.489l-.392-.233-3.221.874.874-3.221-.233-.392A9.953 9.953 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+</a>

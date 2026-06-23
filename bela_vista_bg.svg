@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="215.869mm" height="68.6082mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 11276.31 3583.87"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil0 {fill:#000000; stroke:#DC0000; stroke-width:1.5; vector-effect:non-scaling-stroke}
+   ]]>
+  </style>
+ </defs>
+ <g id="Camada_x0020_1">
+  <g id="_2421331001584">
+   <path class="fil0" d="M3203.82 0c-351.24,8.86 -629.76,157.09 -855.24,430.61l-947.22 1125.19 -289.27 -430.83 -699.17 -23.44 -412.93 394.91 402.33 158.72 621.94 -20.3 97.82 114.42 -699.28 476.31 741.81 1134.97 -506.84 -1082.52 1001.35 -644.38c2780.63,37.82 5177.39,37.82 7958.03,0l1001.35 644.38 -506.84 1082.52 741.81 -1134.97 -699.28 -476.31 97.82 -114.42 621.95 20.3 402.33 -158.72 -412.93 -394.91 -699.17 23.44 -289.27 430.83 -947.22 -1125.19c-225.48,-273.52 -504,-421.74 -855.24,-430.61 -2072.89,5.92 -2795.78,5.92 -4868.66,0z"/>
+   <polygon class="fil0" points="980.74,2460.35 3174.62,3303.63 2450.95,3583.87 1410.7,3429.15 "/>
+   <polygon class="fil0" points="10291.8,2460.35 8097.92,3303.63 8821.58,3583.87 9861.83,3429.15 "/>
+   <ellipse class="fil0" cx="5638.15" cy="3317.45" rx="2016.52" ry="45.45"/>
+  </g>
+ </g>
+</svg>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Dicas e Informações sobre seu Carro | Bela Vista Auto Peças</title>
+  <meta name="description" content="Dicas de manutenção, guias de peças e informações úteis para donos de carro. Blog da Bela Vista Auto Peças em Cariacica-ES.">
+  <link rel="canonical" href="https://belavistaautopecas.com.br/blog/">
+
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://belavistaautopecas.com.br/blog/">
+  <meta property="og:title"       content="Blog — Bela Vista Auto Peças">
+  <meta property="og:description" content="Dicas de manutenção e guias de peças para o seu carro.">
+  <meta property="og:image"       content="https://belavistaautopecas.com.br/bela_vista.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+
+  <!--
+    COMO ADICIONAR UM POST:
+    1. Crie o arquivo HTML do post em /blog/posts/<slug>.html
+       (use /blog/post-template.html como ponto de partida)
+    2. Adicione uma entrada em /blog/posts.json:
+       {
+         "slug":     "nome-do-arquivo-sem-html",
+         "title":    "Título do Post",
+         "date":     "2026-06-18",         ← YYYY-MM-DD (determina a ordem)
+         "category": "Categoria",
+         "excerpt":  "Resumo de 1–2 frases.",
+         "readTime": "5 min"
+       }
+    A listagem reordena automaticamente do mais novo ao mais antigo.
+  -->
+</head>
+<body>
+
+  <div id="site-header"></div>
+
+  <main id="main-content">
+
+    <!-- Hero compacto -->
+    <section class="page-hero" aria-labelledby="blog-title">
+      <div class="page-hero-inner container">
+        <p class="section-label" aria-hidden="true">Artigos</p>
+        <h1 class="section-title" id="blog-title">
+          Dicas para<br><span>o seu carro</span>
+        </h1>
+        <p class="page-hero-sub">
+          Manutenção, peças e tudo que você precisa saber antes de ir à oficina.
+        </p>
+      </div>
+      <div class="hazard-stripe" aria-hidden="true"></div>
+    </section>
+
+    <!-- Listagem de posts -->
+    <section class="section" aria-label="Artigos do blog">
+      <div class="container">
+
+        <!-- Estado: carregando -->
+        <div id="posts-loading" class="search-loading" role="status" aria-live="polite">
+          <div class="spinner" aria-hidden="true"></div>
+          <p class="loading-msg">Carregando artigos…</p>
+        </div>
+
+        <!-- Estado: sem posts -->
+        <div id="posts-empty" class="blog-empty" hidden>
+          <p class="blog-empty-title">Em breve, novos artigos por aqui.</p>
+          <p class="blog-empty-sub">Fique de olho nas nossas novidades.</p>
+          <a href="/" class="btn btn-outline" style="margin-top:20px;display:inline-flex">← Voltar para a home</a>
+        </div>
+
+        <!-- Grid de posts (renderizado via JS) -->
+        <div id="posts-grid" class="blog-grid" hidden></div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="/script.js"></script>
+  <script>
+    /* ── BLOG: carrega posts.json e renderiza ordenado por data ── */
+
+    function formatDate(isoDate) {
+      return new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'short', year: 'numeric' })
+        .format(new Date(isoDate + 'T12:00:00'));
+    }
+
+    function renderPostCard(post) {
+      return `
+        <article class="blog-card">
+          <div class="blog-card-meta">
+            <span class="blog-card-cat">${post.category}</span>
+            <time class="blog-card-date" datetime="${post.date}">${formatDate(post.date)}</time>
+            ${post.readTime ? `<span class="blog-card-read-time">${post.readTime}</span>` : ''}
+          </div>
+          <h2 class="blog-card-title">
+            <a href="/blog/posts/${post.slug}.html">${post.title}</a>
+          </h2>
+          <p class="blog-card-excerpt">${post.excerpt}</p>
+          <a href="/blog/posts/${post.slug}.html" class="blog-card-link" aria-label="Ler artigo: ${post.title}">
+            Ler artigo
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" width="16" height="16">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </article>
+      `;
+    }
+
+    async function loadPosts() {
+      const loading = document.getElementById('posts-loading');
+      const empty   = document.getElementById('posts-empty');
+      const grid    = document.getElementById('posts-grid');
+
+      try {
+        const res   = await fetch('/blog/posts.json');
+        const posts = await res.json();
+
+        loading.setAttribute('hidden', '');
+
+        if (!posts || posts.length === 0) {
+          empty.removeAttribute('hidden');
+          return;
+        }
+
+        /* Ordena do mais novo (maior data) ao mais antigo */
+        const sorted = [...posts].sort((a, b) => new Date(b.date) - new Date(a.date));
+
+        grid.innerHTML = sorted.map(renderPostCard).join('');
+        grid.removeAttribute('hidden');
+
+      } catch (err) {
+        loading.setAttribute('hidden', '');
+        empty.removeAttribute('hidden');
+        console.error('[Blog] Erro ao carregar posts:', err);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', loadPosts);
+  </script>
+</body>
+</html>

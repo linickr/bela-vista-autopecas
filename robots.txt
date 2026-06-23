@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /partials/
+Disallow: /_template-local.html
+
+Sitemap: https://belavistaautopecas.com.br/sitemap.xml

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<!--
+  ================================================================
+  _template-local.html — MOLDE PARA PÁGINAS DE SEO LOCAL
+  ================================================================
+  NÃO é uma página publicada. É o ponto de partida para criar
+  páginas de SEO local como /autopecas-cariacica, /pecas-rio-marinho,
+  /importados-espirito-santo etc.
+
+  COMO USAR:
+  1. Duplique este arquivo para o nome da URL desejada
+     (ex: autopecas-cariacica.html → publica em /autopecas-cariacica)
+  2. Substitua todos os marcadores <!-- XXXX --> pelos valores da página
+  3. Escreva conteúdo ÚNICO para cada localidade — nunca reutilize
+     o mesmo texto trocando só o nome da cidade
+  4. Adicione a URL no sitemap.xml
+  5. Confira o canonical e o schema LocalBusiness
+
+  REGRAS IMPORTANTES:
+  - Cada página tem sua própria canonical URL (nunca apontar para a home)
+  - O conteúdo textual deve ser único por página (mínimo 300 palavras)
+  - Use areaServed no schema com a cidade/bairro específico
+  - Adicione link de/para a home e outras páginas locais (interlink)
+  - Nunca duplicar o texto de outra página local mudando só a cidade
+  ================================================================
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- TITULO: ex: "Autopeças em Cariacica-ES | Bela Vista Auto Peças" -->
+  <title><!-- TITULO --></title>
+
+  <!-- META DESCRIPTION: ~155 chars, inclui cidade/bairro + diferencial -->
+  <meta name="description" content="<!-- META DESCRIPTION -->">
+
+  <!-- CANONICAL: URL exata desta página, sem trailing slash -->
+  <link rel="canonical" href="<!-- CANONICAL -->">
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="<!-- CANONICAL -->">
+  <meta property="og:title"       content="<!-- TITULO -->">
+  <meta property="og:description" content="<!-- META DESCRIPTION -->">
+  <meta property="og:image"       content="https://belavistaautopecas.com.br/bela_vista.svg">
+  <meta property="og:locale"      content="pt_BR">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tema global (mesmas cores, fontes, componentes da home) -->
+  <link rel="stylesheet" href="/style.css">
+
+  <!-- Schema.org LocalBusiness — adaptar por página -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["AutoPartsStore", "LocalBusiness"],
+    "name": "Bela Vista Auto Peças",
+    "description": "<!-- META DESCRIPTION -->",
+    "url": "<!-- CANONICAL -->",
+    "telephone": "+55-27-99777-6244",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Principal, 74",
+      "addressLocality": "Cariacica",
+      "addressRegion": "ES",
+      "postalCode": "29142-340",
+      "addressCountry": "BR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -20.2648,
+      "longitude": -40.4170
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "<!-- CIDADE / BAIRRO DESTA PÁGINA -->"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "08:00",
+        "closes": "18:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "08:00",
+        "closes": "12:00"
+      }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "18",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "sameAs": [
+      "https://www.instagram.com/belavista_autopecas/"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Header com busca — vem do partial (inclui botão WhatsApp flutuante) -->
+  <div id="site-header"></div>
+
+  <main id="main-content">
+
+    <!-- ── HERO COMPACTO ────────────────────────────────────
+         Mais enxuto que o hero da home; foco na localidade.
+         Adapte o H1 para a palavra-chave da página.
+    ─────────────────────────────────────────────────────── -->
+    <section class="hero" style="min-height:50vh" aria-labelledby="local-hero-title">
+      <div class="hero-inner container">
+
+        <div class="hero-eyebrow">
+          <span class="hero-eyebrow-dot" aria-hidden="true"></span>
+          <!-- BREADCRUMB: ex: "Rio Marinho · Cariacica - ES" -->
+          <!-- BREADCRUMB -->
+        </div>
+
+        <!-- H1: inclui a palavra-chave da localidade
+             ex: "Autopeças em Cariacica-ES — Nacionais e Importados" -->
+        <h1 class="hero-title" id="local-hero-title">
+          <!-- H1 -->
+        </h1>
+
+        <p class="hero-sub">
+          <!-- SUBTÍTULO: 1–2 frases sobre o que a loja oferece para esta localidade -->
+          <!-- SUBTITULO -->
+        </p>
+
+        <div class="hero-rating" aria-label="Nota 5,0 no Google">
+          <span class="hero-rating-stars" aria-hidden="true">★★★★★</span>
+          <span class="hero-rating-text">5,0</span>
+          <span class="hero-rating-count">· 18 avaliações no Google</span>
+        </div>
+
+        <div class="hero-cta-group">
+          <button type="button" class="btn btn-primary" id="hero-search-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true" width="18" height="18">
+              <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+            </svg>
+            Buscar minha peça
+          </button>
+          <a href="https://wa.me/5527997776244" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
+            Falar no WhatsApp
+          </a>
+        </div>
+
+      </div>
+      <div class="hero-hazard hazard-stripe" aria-hidden="true"></div>
+    </section>
+
+    <!-- ── CONTEÚDO ÚNICO DA LOCALIDADE ────────────────────
+         Escreva CONTEÚDO ORIGINAL aqui — não copie da home
+         nem de outra página local. Mínimo 300 palavras.
+         Aborde: bairros atendidos, diferenciais locais,
+         tipos de peça mais procurados na região, etc.
+    ─────────────────────────────────────────────────────── -->
+    <section class="section section--alt" aria-labelledby="local-content-title">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-label" aria-hidden="true"><!-- EX: 01 / CARIACICA --></p>
+          <h2 class="section-title" id="local-content-title">
+            <!-- TÍTULO DA SEÇÃO: ex: "Autopeças em <span>Cariacica</span>" -->
+          </h2>
+        </div>
+
+        <div style="max-width:720px">
+          <!-- TEXTO DA LOCALIDADE — conteúdo único -->
+          <!-- TEXTO -->
+        </div>
+
+        <!-- CTA para o WhatsApp com contexto local -->
+        <div style="margin-top:32px">
+          <a href="https://wa.me/5527997776244" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.557 4.118 1.529 5.847L.057 23.272a.75.75 0 0 0 .916.916l5.425-1.472A11.947 11.947 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.992 0-3.867-.543-5.478-1.489l-.392-.233-3.221.874.874-3.221-.233-.392A9.953 9.953 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+            Consultar disponibilidade no WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── INTERLINKS ───────────────────────────────────────
+         Links internos entre páginas locais e a home.
+         Ajuda SEO e orienta o usuário.
+    ─────────────────────────────────────────────────────── -->
+    <section class="section">
+      <div class="container">
+        <p class="section-label" aria-hidden="true">Outras localidades</p>
+        <nav aria-label="Páginas locais">
+          <!-- Adicione links para a home e outras páginas locais -->
+          <a href="/" style="color:var(--clr-text-muted);font-size:14px;margin-right:16px">← Voltar para a Home</a>
+          <!-- ex: <a href="/autopecas-vitoria" style="...">Autopeças em Vitória</a> -->
+        </nav>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer — vem do partial -->
+  <div id="site-footer"></div>
+
+  <script src="/script.js"></script>
+</body>
+</html>
