@@ -1039,6 +1039,12 @@ main:has(.page-hero) { padding-top: 0; }
 
 /* ── RESPONSIVE — mobile only (<768px) ──────────────────── */
 @media (max-width: 767px) {
+  /* background-attachment: fixed causa bugs no iOS Safari —
+     o grid vaza por elementos com position fixed (header/menu) */
+  body,
+  .section--alt,
+  .hero { background-attachment: scroll; }
+
   .about-right { transform: translateY(-35px); }
   .about-emblem { margin-top: 24px; }
 
