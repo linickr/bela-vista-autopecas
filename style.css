@@ -1045,6 +1045,11 @@ main:has(.page-hero) { padding-top: 0; }
   .section--alt,
   .hero { background-attachment: scroll; }
 
+  /* Header e menu mobile totalmente opacos */
+  .site-header { background: var(--clr-bg) !important; }
+  .site-header.scrolled { background: var(--clr-bg) !important; backdrop-filter: none; -webkit-backdrop-filter: none; }
+  .mobile-menu { background: var(--clr-bg) !important; }
+
   .about-right { transform: translateY(-35px); }
   .about-emblem { margin-top: 24px; }
 
