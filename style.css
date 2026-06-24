@@ -260,6 +260,7 @@ input { font-family: inherit; }
 }
 .hamburger span {
   display: block;
+  width: 100%;
   height: 2px;
   background: var(--clr-text);
   border-radius: 2px;
